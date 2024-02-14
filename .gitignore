@@ -69,3 +69,7 @@ venv.bak/
 
 # PyCharm
 /.idea/
+
+# to upload project on PyPI:
+# python setup.py sdist
+# twine upload --repository pypi dist/*
