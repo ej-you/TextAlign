@@ -112,8 +112,12 @@ def center(text: str, width: int) -> str:
         if (last_row_len + len(splitted_text[i]) + 1) > width:
             # кол-во дополнительных пробелов для набора заданной длины ряда
             row_extra_spaces = width - last_row_len
-            # добавляем недостающие пробелы в начало строки
-            rows_list[-1].insert(0, ' ' * row_extra_spaces)
+
+            add_to_start = row_extra_spaces // 2
+            add_to_end = row_extra_spaces - add_to_start
+            # добавляем недостающие пробелы в начало и конец строки
+            rows_list[-1].insert(0, ' ' * add_to_start)
+            rows_list[-1].append(' ' * add_to_end)
 
             # добавляем в список рядов новый ряд с текущим словом
             rows_list.append([splitted_text[i]])
@@ -122,18 +126,22 @@ def center(text: str, width: int) -> str:
 
     # суммируем длину слов и одиночных пробелов между ними последнего ряда
     last_row_len = sum(map(lambda word: len(word), rows_list[-1]))
-    # добавляем недостающие пробелы в начало строки в последнем ряду
-    rows_list[-1].insert(0, ' ' * (width - last_row_len))
+    # кол-во дополнительных пробелов для набора заданной длины ряда
+    row_extra_spaces = width - last_row_len
+
+    add_to_start = row_extra_spaces // 2
+    add_to_end = row_extra_spaces - add_to_start
+    # добавляем недостающие пробелы в начало и конец строки
+    rows_list[-1].insert(0, ' ' * add_to_start)
+    rows_list[-1].append(' ' * add_to_end)
 
     justify_str = '\n'.join([''.join(row) for row in rows_list])
     return justify_str
 
 
 if __name__ == '__main__':
-    # str_text = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    # str_text = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
     str_text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sagittis dolor mauris, at elementum ligula tempor eget. In quis rhoncus nunc, at aliquet orci. Fusce at dolor sit amet felis suscipit tristique. Nam a imperdiet tellus. Nulla eu vestibulum urna. Vivamus tincidunt suscipit enim, nec ultrices nisi volutpat ac. Maecenas sit amet lacinia arcu, non dictum justo. Donec sed quam vel risus faucibus euismod. Suspendisse rhoncus rhoncus felis at fermentum. Donec lorem magna, ultricies a nunc sit amet, blandit fringilla nunc. In vestibulum velit ac felis rhoncus pellentesque. Mauris at tellus enim. Aliquam eleifend tempus dapibus. Pellentesque commodo, nisi sit amet hendrerit fringilla, ante odio porta lacus, ut elementum justo nulla et dolor."
-    res = center(text=str_text, width=55)
+    res = left(text=str_text, width=70)
 
     print()
     print(res)
