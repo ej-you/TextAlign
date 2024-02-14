@@ -7,15 +7,15 @@ def readme():
 
 
 setup(
-    name='text_align',
-    version='1.0.0',
+    name='text-align',
+    version='1.0.1',
     author='Ejyou',
     author_email='ejyou.user@gmail.com',
     description='This module allows you to align text relative to the center, right, left and both sides',
     long_description=readme(),
     long_description_content_type='text/markdown',
     url='https://github.com/Danil-114195722/TextAlign',
-    packages=['TextAlign'],
+    packages=['text-align'],
     install_requires=[],
     classifiers=[
         'Programming Language :: Python :: 3.12',
