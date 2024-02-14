@@ -7,7 +7,7 @@ def readme():
 
 
 setup(
-    name='text-align',
+    name='text_align',
     version='1.0.1',
     author='Ejyou',
     author_email='ejyou.user@gmail.com',
