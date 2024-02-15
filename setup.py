@@ -8,7 +8,7 @@ def readme():
 
 setup(
     name='text_align',
-    version='1.0.3',
+    version='1.0.4',
     author='Ejyou',
     author_email='ejyou.user@gmail.com',
     description='This module allows you to align text relative to the center, right, left and both sides',

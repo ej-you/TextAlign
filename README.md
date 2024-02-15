@@ -1,6 +1,6 @@
 # TextAlign
 
-### Last version: 1.0.3
+### Last version: 1.0.4
 
 ### Short description:
 
@@ -46,5 +46,5 @@ elementum justo nulla et dolor.
 ### Installation:
 
 ```shell
-pip install text-align==1.0.3
+pip install text-align==1.0.4
 ```
