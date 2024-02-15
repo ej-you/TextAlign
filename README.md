@@ -1,5 +1,7 @@
 # TextAlign
 
+### Last version: 1.0.3
+
 ### Short description:
 
 This module allows you to align text relative to the center, right, left and both sides
@@ -39,4 +41,10 @@ tempus  dapibus.  Pellentesque  commodo,  nisi sit amet
 hendrerit   fringilla,   ante   odio  porta  lacus,  ut
 elementum justo nulla et dolor.
 '''
+```
+
+### Installation:
+
+```shell
+pip install text-align==1.0.3
 ```
